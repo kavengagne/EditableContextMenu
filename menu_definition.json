@@ -1,0 +1,25 @@
+{
+  "name": "Main Menu",
+  "icon": "path/to/icon.bmp",
+  "items": [
+    {
+      "name": "Sub Menu 1",
+      "command": ""
+    },
+    {
+      "name": "Sub Menu 2",
+      "items": [
+        {
+          "name": "Sub Menu 2-1",
+          "icon": "path/to/icon2.bmp",
+          "items": [
+            {
+              "name": "Sub Menu 2-1-1",
+              "command": "cmd"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

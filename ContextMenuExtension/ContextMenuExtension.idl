@@ -1,0 +1,32 @@
+// ContextMenuExtension.idl : IDL source for ContextMenuExtension
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ContextMenuExtension.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(FE64FE95-8878-4FD6-90C0-27A8224A7785),
+	pointer_default(unique)
+]
+interface IContextMenuShellExtension : IUnknown{
+};
+[
+	uuid(8DB3EA76-8BBC-47FA-876C-A528ADE6D344),
+	version(1.0),
+]
+library ContextMenuExtensionLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(93AD5C16-28F2-4F58-AD75-2DE079AC2EB9)		
+	]
+	coclass ContextMenuShellExtension
+	{
+		[default] interface IContextMenuShellExtension;
+	};
+};
+

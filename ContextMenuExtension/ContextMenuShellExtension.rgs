@@ -1,0 +1,46 @@
+HKCR
+{
+    NoRemove CLSID
+    {
+        ForceRemove {93AD5C16-28F2-4F58-AD75-2DE079AC2EB9} = s 'EditableContextMenu Ext'
+        {
+            InprocServer32 = s '%MODULE%'
+            {
+                val ThreadingModel = s 'Apartment'
+            }
+        }
+    }
+    
+    NoRemove *
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove ContextMenu = s '{93AD5C16-28F2-4F58-AD75-2DE079AC2EB9}'
+            }
+        }
+    }
+    
+    NoRemove Directory
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove ContextMenu = s '{93AD5C16-28F2-4F58-AD75-2DE079AC2EB9}'
+            }
+        }
+    }
+    
+    NoRemove Folder
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove ContextMenu = s '{93AD5C16-28F2-4F58-AD75-2DE079AC2EB9}'
+            }
+        }
+    }
+}

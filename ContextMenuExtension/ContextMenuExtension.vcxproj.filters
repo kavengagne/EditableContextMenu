@@ -64,14 +64,14 @@
     <ClCompile Include="DataObjectEnumerator.cpp">
       <Filter>Source Files\utils</Filter>
     </ClCompile>
-    <ClCompile Include="ImageUtils.cpp">
-      <Filter>Source Files\utils</Filter>
-    </ClCompile>
     <ClCompile Include="JsonMenuParser.cpp">
       <Filter>Source Files\utils</Filter>
     </ClCompile>
     <ClCompile Include="StringUtil.cpp">
       <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandParameters.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -189,14 +189,14 @@
     <ClInclude Include="DataObjectEnumerator.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
-    <ClInclude Include="ImageUtils.h">
-      <Filter>Header Files\utils</Filter>
-    </ClInclude>
     <ClInclude Include="JsonMenuParser.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="StringUtil.h">
       <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandParameters.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

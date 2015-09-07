@@ -107,7 +107,7 @@ const std::wstring MenuCommand::GetAllItems(const string_list& files)
     std::wstring value;
     for each (auto file in files)
     {
-        MenuCommand::AddDoubleQuotes(&file);
+        AddDoubleQuotes(&file);
         value.append(file + SEPARATOR);
     }
     StringUtil::TrimEnd(&value, SEPARATOR);

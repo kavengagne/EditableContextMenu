@@ -227,6 +227,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommandParameters.cpp" />
     <ClCompile Include="ContextMenu.cpp" />
     <ClCompile Include="ContextMenuShellExtension.cpp" />
     <ClCompile Include="ContextMenuExtension.cpp" />
@@ -259,7 +260,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="ImageUtils.cpp" />
     <ClCompile Include="MenuCommand.cpp" />
     <ClCompile Include="MenuDefinitionResult.cpp" />
     <ClCompile Include="MenuItem.cpp" />
@@ -273,12 +273,12 @@
     <ClCompile Include="StringUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommandParameters.h" />
     <ClInclude Include="ContextMenu.h" />
     <ClInclude Include="ContextMenuShellExtension.h" />
     <ClInclude Include="ContextMenuExtension_i.h" />
     <ClInclude Include="DataObjectEnumerator.h" />
     <ClInclude Include="dllmain.h" />
-    <ClInclude Include="ImageUtils.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
     <ClInclude Include="include\rapidjson\encodedstream.h" />

@@ -18,8 +18,9 @@
 #pragma region Constructors
 CContextMenuShellExtension::CContextMenuShellExtension()
 {
-    m_hSendBitmap = LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_SENDBMP));
-    m_hSendBitmap = ImageUtils::ReplaceColor(m_hSendBitmap, RGB(255, 255, 255), GetSysColor(COLOR_MENU));
+    //m_hSendBitmap = LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_SENDBMP));
+    m_hSendBitmap = (HBITMAP)LoadImage(NULL, L"D:\\new16.bmp", IMAGE_BITMAP, 16, 16,
+        LR_DEFAULTCOLOR | LR_LOADFROMFILE | LR_CREATEDIBSECTION);
 }
 
 

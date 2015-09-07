@@ -4,7 +4,6 @@
 #include "ContextMenuExtension_i.h"
 #include "dllmain.h"
 
-#include "ImageUtils.h"
 #include "DataObjectEnumerator.h"
 
 #include "JsonMenuParser.h"

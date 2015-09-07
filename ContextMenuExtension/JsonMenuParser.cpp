@@ -21,6 +21,7 @@ bool JsonMenuParser::CreateMenuDefinition(MenuDefinitionResult& menuDefinition, 
 
     MenuItem menu;
     RecursiveGetMenuItems(menu, root);
+    menu.icon = GetStringValue(root, "icon");
     menuDefinition.SetMenu(menu);
 
     return menuDefinition.IsValid();
@@ -49,8 +50,6 @@ const std::string JsonMenuParser::GetJsonFileData(const std::wstring& jsonFilePa
 void JsonMenuParser::RecursiveGetMenuItems(MenuItem& menu, const rapidjson::Value& node)
 {
     menu.name = GetStringValue(node, "name");
-    menu.icon = GetStringValue(node, "icon");
-    menu.command = GetStringValue(node, "command");
 
     const auto iterator = node.FindMember("items");
     if (iterator != node.MemberEnd() && iterator->value.IsArray())
@@ -66,6 +65,11 @@ void JsonMenuParser::RecursiveGetMenuItems(MenuItem& menu, const rapidjson::Valu
             menu.items.push_back(subMenu);
         }
     }
+    else
+    {
+        menu.command = GetStringValue(node, "command");
+        menu.commandParameters = GetCommandParameters(node);
+    }
 }
 
 
@@ -77,4 +81,18 @@ const std::wstring JsonMenuParser::GetStringValue(const rapidjson::Value& item, 
         return StringUtil::AnsiToWide(iterator->value.GetString());
     }
     return L"";
+}
+
+
+const CommandParameters JsonMenuParser::GetCommandParameters(const rapidjson::Value& item)
+{
+    const auto iterator(item.FindMember("commandParameters"));
+    if (iterator != item.MemberEnd())
+    {
+        const rapidjson::Value& parameters = iterator->value;
+        return CommandParameters(
+            GetStringValue(parameters, "separator"),
+            GetStringValue(parameters, "verb"));
+    }
+    return CommandParameters();
 }
